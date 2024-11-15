@@ -36,10 +36,40 @@ git checkout in
 Создать локальный git-репозиторий. Задать свои имя и почту (далее – coder1). Разместить файл prog.py с какими-нибудь данными. Прислать в текстовом виде диалог с git.
 
 ### Решение:
-
+```
+git init
+git config user.name "narvik"
+git config user.email "nrtdzh@gmail.com"
+echo print("Hello, World!") > test.py
+git add test.py
+git commit -m "first commit"
+```
 
 ### Результат:
+```
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задание2>git init
+Initialized empty Git repository in C:/Users/narvik/Desktop/MIREA/КонфУ/pract4/Задание2/.git/
 
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задание2>git config user.name "narvik"
+
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задание2>git config user.email "nrtdzh@gmail.com"
+
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задание2>echo print("Hello, World!") > test.py
+
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задание2>git add test.py
+
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задание2>git commit -m "first commit"
+[master (root-commit) 1434286] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.py
+
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задание2>git log
+commit 14342863c1062c47c447a218c806b0b2c12bfdd2 (HEAD -> master)
+Author: narvik <nrtdzh@gmail.com>
+Date:   Fri Nov 15 12:26:10 2024 +0300
+
+    first commit
+```
 
 
 ## Задача 3
