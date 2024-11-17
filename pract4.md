@@ -170,18 +170,6 @@ C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git 
 C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>cd ..\local
 
 C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git pull server master
-remote: Enumerating objects: 10, done.
-remote: Counting objects: 100% (10/10), done.
-remote: Compressing objects: 100% (5/5), done.
-remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
-Unpacking objects: 100% (6/6), 605 bytes | 43.00 KiB/s, done.
-From ..\server
- * branch            master     -> FETCH_HEAD
-   22db68f..8a4e84b  master     -> server/master
-Updating 22db68f..8a4e84b
-Fast-forward
- readme.md | 4 ++++
- 1 file changed, 4 insertions(+)
 ```
 
 ### Результат:
