@@ -116,7 +116,232 @@ Coder2 добавляет в readme в раздел об авторах свою
 
 
 ### Результат:
+```
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git init local
+Initialized empty Git repository in C:/Users/narvik/Desktop/МИРЭА/КонфУ/pract4/Задание3/local/.git/
 
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>cd local
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git config user.email qwe1@nevo.com
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git config user.name qwe1
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>echo print("Sorry for the late deadline!") > sorry.py
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git add .
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git commit -m "first"
+[master (root-commit) ae4ffcb] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 sorry.py
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>cd ..
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git init --bare server
+Initialized empty Git repository in C:/Users/narvik/Desktop/МИРЭА/КонфУ/pract4/Задание3/server/
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>cd local
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git remote add server ..\server
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git push server master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 238 bytes | 238.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To ..\server
+ * [new branch]      master -> master
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git remote -v
+server  ..\server (fetch)
+server  ..\server (push)
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git pull server master
+From ..\server
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>cd ..
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>mkdir local2
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git clone server local2
+Cloning into 'local2'...
+done.
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>cd local2
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git config user.email qwe2@nevo.com
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git config user.name qwe2
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>echo Чета делаит > readme.md
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git add .
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git commit -m "second"
+[master 934b72e] second
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git remote add server ..\server
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git push server master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 275.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To ..\server
+   ae4ffcb..934b72e  master -> master
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git remote remove origin
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>cd ..\local
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git pull server master
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 255 bytes | 31.00 KiB/s, done.
+From ..\server
+ * branch            master     -> FETCH_HEAD
+   ae4ffcb..934b72e  master     -> server/master
+Updating ae4ffcb..934b72e
+Fast-forward
+ readme.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>(echo. && echo "Авторы: qwe1, qwe1@nevo.com") >> readme.md
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git add .
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git commit -m "third"
+[master 22db68f] third
+ 1 file changed, 2 insertions(+)
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git push server master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 304 bytes | 304.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To ..\server
+   934b72e..22db68f  master -> master
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>cd ..\local2
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>(echo. && echo "Авторы: qwe2, qwe2@nevo.com") >> readme.md
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git add .
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git commit -m "third"
+[master 671b104] third
+ 1 file changed, 2 insertions(+)
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git pull server master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 284 bytes | 35.00 KiB/s, done.
+From ..\server
+ * branch            master     -> FETCH_HEAD
+   934b72e..22db68f  master     -> server/master
+Auto-merging readme.md
+CONFLICT (content): Merge conflict in readme.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+tortoisemerge emerge vimdiff nvimdiff
+Merging:
+readme.md
+
+Normal merge conflict for 'readme.md':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (vimdiff):
+4 files to edit
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git add .
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git commit -m "conflict resolved third"
+[master 8a4e84b] conflict resolved third
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git push server master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 625 bytes | 625.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To ..\server
+   22db68f..8a4e84b  master -> master
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git log --graph --all
+*   commit 8a4e84b81cf07839f4201422a1b83783db7d6526 (HEAD -> master, server/master)
+|\  Merge: 671b104 22db68f
+| | Author: qwe2 <qwe2@nevo.com>
+| | Date:   Mon Nov 18 01:38:57 2024 +0300
+| |
+| |     conflict resolved third
+| |
+| * commit 22db68f7290ddb7f3da0fd817d72b77c3f0ffb41
+| | Author: qwe1 <qwe1@nevo.com>
+| | Date:   Mon Nov 18 00:49:56 2024 +0300
+| |
+| |     third
+| |
+* | commit 671b104a43e3fd25bb261492ba74b9d28a7114f0
+|/  Author: qwe2 <qwe2@nevo.com>
+|   Date:   Mon Nov 18 00:56:44 2024 +0300
+|
+|       third
+|
+* commit 934b72efc47eefd2b34bdab0062a14396cfc6919
+| Author: qwe2 <qwe2@nevo.com>
+| Date:   Sun Nov 17 23:52:14 2024 +0300
+|
+|     second
+|
+* commit ae4ffcbd546429b423390fe75fd98c404ca27f26
+  Author: qwe1 <qwe1@nevo.com>
+  Date:   Sun Nov 17 23:29:34 2024 +0300
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git pull server master
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (6/6), 605 bytes | 43.00 KiB/s, done.
+From ..\server
+ * branch            master     -> FETCH_HEAD
+   22db68f..8a4e84b  master     -> server/master
+Updating 22db68f..8a4e84b
+Fast-forward
+ readme.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+```
 
 
 ## Задача 4
