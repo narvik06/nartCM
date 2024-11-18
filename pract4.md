@@ -36,7 +36,7 @@ git checkout in
 Создать локальный git-репозиторий. Задать свои имя и почту (далее – coder1). Разместить файл prog.py с какими-нибудь данными. Прислать в текстовом виде диалог с git.
 
 ### Решение-Результат:
-```
+```cmd
 C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git init local
 Initialized empty Git repository in C:/Users/narvik/Desktop/МИРЭА/КонфУ/pract4/Задание3/local/.git/
 
@@ -98,7 +98,7 @@ Coder2 добавляет в readme в раздел об авторах свою
 ```
 
 ### Решение:
-```
+```cmd
 C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git init --bare server
 
 C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>cd local
@@ -173,7 +173,7 @@ C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git p
 ```
 
 ### Результат:
-```
+```cmd
 C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git log --graph --all
 *   commit 8a4e84b81cf07839f4201422a1b83783db7d6526 (HEAD -> master, server/master)
 |\  Merge: 671b104 22db68f
@@ -210,11 +210,121 @@ C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git l
 Написать программу на Питоне (или другом ЯП), которая выводит список содержимого всех объектов репозитория. Воспользоваться командой "git cat-file -p". Идеальное решение – не использовать иных сторонних команд и библиотек для работы с git.
 
 ### Решение:
+```python
+import subprocess
 
+def get_git_objects():
+    # Получаем список всех объектов в репозитории
+    result = subprocess.run(['git', 'rev-list', '--objects', 'HEAD'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    objects = result.stdout.splitlines()
+
+    for obj in objects:
+        # Получаем хеш объекта
+        obj_hash = obj.split(' ')[0]
+
+        # Получаем информацию о типе объекта с помощью git cat-file
+        result = subprocess.run(['git', 'cat-file', 'commit', obj_hash], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        
+        if result.returncode != 0:  # Если не коммит (например, блоб или дерево)
+            result = subprocess.run(['git', 'cat-file', 'blob', obj_hash], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            if result.returncode != 0:
+                result = subprocess.run(['git', 'cat-file', 'tree', obj_hash], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+                if result.returncode != 0:
+                    print(f"Failed to get object {obj_hash}")
+                    continue
+                object_type = "tree"
+            else:
+                object_type = "blob"
+        else:
+            object_type = "commit"
+
+        # Выводим комментарий о типе объекта
+        print(f"Object {obj_hash} ({object_type}):")
+        print(result.stdout)
+        print("\n---\n")
+
+if __name__ == '__main__':
+    get_git_objects()
+```
 
 ### Результат:
+```
+C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание4\local>python objects.py
+Object 8a4e84b81cf07839f4201422a1b83783db7d6526 (commit):
+tree 0f4751d28c222d2f2049635c3d970101be28ca38
+parent 671b104a43e3fd25bb261492ba74b9d28a7114f0
+parent 22db68f7290ddb7f3da0fd817d72b77c3f0ffb41
+author qwe2 <qwe2@nevo.com> 1731883137 +0300
+committer qwe2 <qwe2@nevo.com> 1731883137 +0300
+
+conflict resolved third
 
 
+---
+
+Object 671b104a43e3fd25bb261492ba74b9d28a7114f0 (commit):
+tree 39193c2cca39201e7cec9b289d447c1d242d10f5
+parent 934b72efc47eefd2b34bdab0062a14396cfc6919
+author qwe2 <qwe2@nevo.com> 1731880604 +0300
+committer qwe2 <qwe2@nevo.com> 1731880604 +0300
+
+third
+
+
+---
+
+Object 22db68f7290ddb7f3da0fd817d72b77c3f0ffb41 (commit):
+tree c10cc6363774d56a651cc16c618e4b8c6f0b16dc
+parent 934b72efc47eefd2b34bdab0062a14396cfc6919
+author qwe1 <qwe1@nevo.com> 1731880196 +0300
+committer qwe1 <qwe1@nevo.com> 1731880196 +0300
+
+third
+
+
+---
+
+Object 934b72efc47eefd2b34bdab0062a14396cfc6919 (commit):
+tree fa938cb206193ee2b08a59525a15f431e3cb8ec4
+parent ae4ffcbd546429b423390fe75fd98c404ca27f26
+author qwe2 <qwe2@nevo.com> 1731876734 +0300
+committer qwe2 <qwe2@nevo.com> 1731876734 +0300
+
+second
+
+
+---
+
+Object ae4ffcbd546429b423390fe75fd98c404ca27f26 (commit):
+tree 05bd15740ba4a4c8ec4e089e30b43709b3c824a3
+author qwe1 <qwe1@nevo.com> 1731875374 +0300
+committer qwe1 <qwe1@nevo.com> 1731875374 +0300
+
+first
+
+
+---
+
+Object 0f4751d28c222d2f2049635c3d970101be28ca38 (tree):
+100644 readme.md \‰,Жв”П.Ы™†BЃїь"f2aП100644 sorry.py ћ=ВOГB¶♣b¤№¤БiФur+
+
+---
+
+Object 5c892cc6e294cf2edb99864281bffc22663261cf (blob):
+—Ґв  ¤Ґ« Ёв
+
+
+"Ђўв®ал: qwe2, qwe2@nevo.com"
+
+"Ђўв®ал: qwe1, qwe1@nevo.com"
+
+
+
+---
+
+Object 9e3dc24fc342b60562a4b9a4c169d475fd08722b (blob):
+print("Sorry for the late deadline!")
+```
 
 ## Полезные ссылки
 
