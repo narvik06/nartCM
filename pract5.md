@@ -220,9 +220,45 @@ public static int computeFactorial(int);
 Прислать полный список команд для установки и загрузки, а также скриншот с motd, где фигурируют ваши имя и фамилия.
 
 ### Решение:
+cmd:
+```
+qemu-img create -f qcow2 AlpineLinux.qcow2 500M
+qemu-system-x86_64 -m 512M -hda AlpineLinux.qcow2 -cdrom alpine-virt-3.20.3-x86_64.iso -boot d
+```
+Alpine:
+```
+setup-alpine
+...
+**Disk & Install**
+**————————**
+Available disks are:
+  fd0   (0.0 GB  )
+  sda   (0.5 GB ATA      QEMU HARDDISK   )
+
+Which disk(s) would you like to use? (or '?' for help or 'none') [none] sda
+
+The following disk is selected:
+  sda   (0.5 GB ATA      QEMU HARDDISK   )
+
+How would you like to use it? ('sys', 'data', 'crypt', 'lvm', or '?' for help) [?] sys
+
+WARNING: The following disk(s) will be erased:
+  sda   (0.5 GB ATA      QEMU HARDDISK   )
+
+WARNING: Erase the above disk(s) and continue? (y/n) [n] y
+
+echo "Welcome, Anvar Nartadzhiev!" > /etc/motd
+```
+cmd:
+```
+qemu-system-x86_64 -m 512M -hda AlpineLinux.qcow2 -boot c
+```
 
 
 ### Результат:
+![image](https://github.com/user-attachments/assets/819fb3bf-c128-4ace-bb58-1204d1c8e963)
+
+![image](https://github.com/user-attachments/assets/1cdac55f-2a19-4218-a814-1b5d10879e2d)
 
 
 
