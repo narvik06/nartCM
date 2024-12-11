@@ -37,20 +37,20 @@ git checkout in
 
 ### Решение-Результат:
 ```cmd
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git init local
-Initialized empty Git repository in C:/Users/narvik/Desktop/МИРЭА/КонфУ/pract4/Задание3/local/.git/
+Задача2-3>git init local
+Initialized empty Git repository in C:/Users/narvik/Desktop/MIREA/КонфУ/pract4/Задача2-3/local/.git/
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>cd local
+Задача2-3>cd local
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git config user.email qwe1@nevo.com
+Задача2-3\local>git config user.email qwe1@nevo.com
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git config user.name qwe1
+Задача2-3\local>git config user.name qwe1
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>echo print("Sorry for the late deadline!") > sorry.py
+Задача2-3\local>echo print("Sorry for the late deadline!") > sorry.py
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git add .
+Задача2-3\local>git add .
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git commit -m "first"
+Задача2-3\local>git commit -m "first"
 [master (root-commit) ae4ffcb] first
  1 file changed, 1 insertion(+)
  create mode 100644 sorry.py
@@ -99,82 +99,82 @@ Coder2 добавляет в readme в раздел об авторах свою
 
 ### Решение:
 ```cmd
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git init --bare server
+Задача2-3>git init --bare server
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>cd local
+Задача2-3>cd local
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git remote add server ..\server
+Задача2-3\local>git remote add server ..\server
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git push server master
+Задача2-3\local>git push server master
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git remote -v
+Задача2-3\local>git remote -v
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git pull server master
+Задача2-3\local>git pull server master
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>cd ..
+Задача2-3\local>cd ..
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>mkdir local2
+Задача2-3>mkdir local2
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>git clone server local2
+Задача2-3>git clone server local2
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3>cd local2
+Задача2-3>cd local2
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git config user.email qwe2@nevo.com
+Задача2-3\local2>git config user.email qwe2@nevo.com
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git config user.name qwe2
+Задача2-3\local2>git config user.name qwe2
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>echo Чета делаит > readme.md
+Задача2-3\local2>echo Чета делаит > readme.md
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git add .
+Задача2-3\local2>git add .
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git commit -m "second"
+Задача2-3\local2>git commit -m "second"
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git remote add server ..\server
+Задача2-3\local2>git remote add server ..\server
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git push server master
+Задача2-3\local2>git push server master
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git remote remove origin
+Задача2-3\local2>git remote remove origin
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git status
+Задача2-3\local2>git status
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>cd ..\local
+Задача2-3\local2>cd ..\local
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git pull server master
+Задача2-3\local>git pull server master
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>(echo. && echo "Авторы: qwe1, qwe1@nevo.com") >> readme.md
+Задача2-3\local>(echo. && echo "Авторы: qwe1, qwe1@nevo.com") >> readme.md
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git add .
+Задача2-3\local>git add .
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git commit -m "third"
+Задача2-3\local>git commit -m "third"
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git push server master
+Задача2-3\local>git push server master
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>cd ..\local2
+Задача2-3\local>cd ..\local2
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>(echo. && echo "Авторы: qwe2, qwe2@nevo.com") >> readme.md
+Задача2-3\local2>(echo. && echo "Авторы: qwe2, qwe2@nevo.com") >> readme.md
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git add .
+Задача2-3\local2>git add .
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git commit -m "third"
+Задача2-3\local2>git commit -m "third"
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git pull server master
+Задача2-3\local2>git pull server master
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git mergetool
+Задача2-3\local2>git mergetool
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git add .
+Задача2-3\local2>git add .
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git commit -m "conflict resolved third"
+Задача2-3\local2>git commit -m "conflict resolved third"
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>git push server master
+Задача2-3\local2>git push server master
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local2>cd ..\local
+Задача2-3\local2>cd ..\local
 
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git pull server master
+Задача2-3\local>git pull server master
 ```
 
 ### Результат:
 ```cmd
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание3\local>git log --graph --all
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задача2-3\local>git log --graph --all
 *   commit 8a4e84b81cf07839f4201422a1b83783db7d6526 (HEAD -> master, server/master)
 |\  Merge: 671b104 22db68f
 | | Author: qwe2 <qwe2@nevo.com>
@@ -249,7 +249,7 @@ if __name__ == '__main__':
 
 ### Результат:
 ```
-C:\Users\narvik\Desktop\МИРЭА\КонфУ\pract4\Задание4\local>python objects.py
+C:\Users\narvik\Desktop\MIREA\КонфУ\pract4\Задача4\local>python objects.py
 Object 8a4e84b81cf07839f4201422a1b83783db7d6526 (commit):
 tree 0f4751d28c222d2f2049635c3d970101be28ca38
 parent 671b104a43e3fd25bb261492ba74b9d28a7114f0
