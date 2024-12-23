@@ -26,7 +26,9 @@ pip install pytest
 ```
 
 ## Запуск
+```bash
 python main.py -n USERNAME -p ARCHIVE.tar -l LOG.csv
+```
 **Тесты:**
 ```bash
 pytest
