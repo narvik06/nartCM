@@ -1,0 +1,4 @@
+visualizer_path: "./plantuml.jar"
+repository_path: "./test_repo"
+output_path: "./dependencies_graph.puml"
+start_date: "2024-01-01"
