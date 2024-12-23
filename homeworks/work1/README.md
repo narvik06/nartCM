@@ -19,6 +19,7 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
+**Установка зависимостей**
 ```bash
 pip install pytest
 ```
